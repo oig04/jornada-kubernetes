@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meu-app-nginx-persistente
+spec:
+  replicas: 1 # Começaremos com 1 para facilitar a verificação
+  selector:
+    matchLabels:
+      app: meu-app-persistente
+  template:
+    metadata:
+      labels:
+        app: meu-app-persistente
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+        ports:
+        - containerPort: 80
+        # --- SEÇÃO DE MONTAGEM DO VOLUME ---
+        # Monta o volume 'nginx-logs-volume' no diretório de logs do NGINX
+        volumeMounts:
+        - name: nginx-logs-volume
+          mountPath: /var/log/nginx
+      # --- SEÇÃO DE DEFINIÇÃO DO VOLUME ---
+      # Define um volume chamado 'nginx-logs-volume'
+      volumes:
+      - name: nginx-logs-volume
+        # O tipo do volume é hostPath, ou seja, um diretório no nó do Kind
+        hostPath:
+          # O caminho no nó onde os dados serão armazenados.
+          # Este diretório será criado se não existir.
+          path: /mnt/logs
+          type: DirectoryOrCreate

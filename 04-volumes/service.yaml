@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: meu-app-nginx-persistente-service
+spec:
+  type: NodePort
+  selector:
+    # Este seletor deve corresponder ao label do NOVO deployment
+    app: meu-app-persistente
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30007
