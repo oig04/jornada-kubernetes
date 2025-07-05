@@ -43,6 +43,7 @@ Este estudo demonstra como usar um objeto `Service` para expor uma aplicação q
 
     Você deverá ver a página de boas-vindas do NGINX, confirmando que o serviço está funcionando e roteando o tráfego corretamente para os Pods. 🎉
 
+<p align="center"><img src="./prints/welcometongnix.png" width="600"/></p>
 ---
 
 ### Limpeza do Ambiente
