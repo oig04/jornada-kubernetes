@@ -49,7 +49,7 @@ As instruções detalhadas para configurar o ambiente do zero estão no document
 
 * **Giovanna Freitas**
 * **GitHub:** [oig04](https://github.com/oig04)
-* **LinkedIn:** [seu-perfil-linkedin](https://www.linkedin.com/in/giovannafreitasdev)
+* **LinkedIn:** [giovannafreitasdev](https://www.linkedin.com/in/giovannafreitasdev)
 
 ---
 
