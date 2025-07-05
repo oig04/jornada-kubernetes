@@ -13,6 +13,7 @@ Repositório dedicado à documentação da minha jornada de estudos e experiment
 
 O propósito deste repositório é consolidar o aprendizado, criar uma base de conhecimento consultável e demonstrar de forma prática as competências adquiridas no ecossistema de contêineres e orquestração.
 <p align="center"><img src="./prints/porta-8080.png" width="600"/></p>
+
 ---
 
 ### **Tecnologias Utilizadas**
