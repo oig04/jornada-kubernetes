@@ -83,12 +83,12 @@ Abaixo estão os prints que comprovam o ciclo de teste da persistência dos dado
 **1. Geração dos Dados**
 
 Acessando a aplicação no navegador para gerar as entradas de log.
-<p align="center"><img src="./porta-300007-lab4.png" width="600"/></p>
+<p align="center"><img src="./porta-30007-lab4.png" width="600"/></p>
 
 **2. Verificação no Pod Original**
 
 O terminal mostrando os logs escritos com sucesso dentro do primeiro Pod.
-<p align="center"><img src="./prova-dos-dados-iniciais.png" width="600"/></p>
+<p align="center"><img src="./prova-dos-dados-inicias.png" width="600"/></p>
 
 **3. Simulação da Falha**
 
