@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-deployment
+  name: meu-app-nginx
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: hello-app
+      app: meu-app
   template:
     metadata:
       labels:
-        app: hello-app
+        app: meu-app
     spec: 
       containers:
-      - name: hello-container
-        image: hello-k8s:v1
-        imagePullPolicy: IfNotPresent
+      - name: nginx-container
+        image: nginx:1.27.0       
         ports:
         - containerPort: 80

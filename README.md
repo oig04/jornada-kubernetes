@@ -35,7 +35,6 @@ Cada estudo ou laboratório prático está contido em sua própria pasta numerad
 
 * **[00 - Preparação do Ambiente](./00-preparacao-ambiente/README.md)**: Guia passo a passo para configurar o ambiente de desenvolvimento local com Docker, Kind e kubectl.
 * **[01 - Ciclo de Vida do Deployment](./01-deployment-lifecycle/README.md)**: Estudo sobre criação, escalabilidade e atualização (Rolling Update) de uma aplicação NGINX.
-* *(Adicione novos links aqui conforme for progredindo nos estudos...)*
 
 ---
 

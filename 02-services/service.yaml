@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  # O nome do nosso Service
+  name: meu-app-nginx-service
+spec:
+  # O tipo de Service. NodePort nos permite acessar de fora do cluster local.
+  type: NodePort
+  # Este seletor é a parte mais importante! Ele diz ao Service para
+  # procurar e enviar tráfego para todos os Pods que tenham o label "app: meu-app".
+  # É o mesmo label que usamos no nosso Deployment.
+  selector:
+    app: meu-app
+  ports:
+    - protocol: TCP
+      # A porta que o Service expõe DENTRO do cluster.
+      port: 80
+      # A porta no contêiner para a qual o tráfego deve ser enviado.
+      targetPort: 80
+      # A porta estática (entre 30000-32767) que será exposta em cada nó.
+      # Se não especificarmos, o Kubernetes escolhe uma aleatória.
+      nodePort: 30007
