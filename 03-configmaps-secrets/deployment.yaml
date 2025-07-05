@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meu-app-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: meu-app
+  template:
+    metadata:
+      labels:
+        app: meu-app
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:1.27.0
+        ports:
+        - containerPort: 80
+        # --- SEÇÃO ADICIONADA PARA O SECRET ---
+        # Injeta todas as chaves do Secret como variáveis de ambiente
+        envFrom:
+        - secretRef:
+            name: meu-app-secret
+        # --- SEÇÃO ADICIONADA PARA O CONFIGMAP ---
+        # Define onde o volume será montado dentro do contêiner
+        volumeMounts:
+        - name: pagina-nginx-volume
+          # O NGINX serve arquivos a partir deste diretório por padrão
+          mountPath: /usr/share/nginx/html
+      # --- SEÇÃO ADICIONADA PARA O CONFIGMAP ---
+      # Define o volume que será usado pelo Pod
+      volumes:
+      - name: pagina-nginx-volume
+        # Diz ao volume para pegar seus dados do ConfigMap que criamos
+        configMap:
+          name: pagina-nginx-configmap

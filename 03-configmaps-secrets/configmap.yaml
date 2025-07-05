@@ -1,0 +1,27 @@
+# 03-configmaps-secrets/configmap.yaml
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pagina-nginx-configmap
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Bem-vindo à Minha Aplicação!</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+      }
+    </style>
+    </head>
+    <body>
+    <h1>Bem-vindo à Minha Aplicação!</h1>
+    <p>Esta página está sendo servida por um NGINX rodando no Kubernetes.</p>
+    <p>O conteúdo desta página foi carregado dinamicamente a partir de um <strong>ConfigMap</strong>, sem a necessidade de reconstruir a imagem Docker.</p>
+    </body>
+    </html>
